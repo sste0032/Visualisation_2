@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/sste0032/Visualisation_2/main/Data/conflicts.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "region", "type": "nominal", "title": "Region"},
+    "y": {
+      "aggregate": "distinct",
+      "field": "conflict_id",
+      "type": "quantitative",
+      "title": "Number of Conflicts"
+    },
+    "color": {"field": "intensity_level", "type": "nominal"}
+  },
+  "config": {}
+}
