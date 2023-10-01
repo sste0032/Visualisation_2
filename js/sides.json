@@ -74,7 +74,7 @@
         "update": {
           "x": {"scale": "position", "field": "order"},
           "y": {"value": 0},
-          "size": {"field": "degree", "mult": 5, "offset": 10},
+          "size": {"field": "degree", "mult": 10, "offset": 10},
           "fill": {"scale": "color", "field": "group"}
         }
       }
@@ -126,7 +126,7 @@
         "update": {
           "x": {"scale": "position", "field": "order"},
           "y": {"value": 7},
-          "fontSize": {"value": 6},
+          "fontSize": {"value": 9},
           "align": {"value": "right"},
           "baseline": {"value": "middle"},
           "angle": {"value": -90},
