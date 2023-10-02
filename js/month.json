@@ -1,0 +1,143 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A radar chart example, showing multiple dimensions in a radial layout.",
+  "width": 400,
+  "height": 400,
+  "padding": 40,
+  "autosize": {"type": "none", "contains": "padding"},
+  "signals": [{"name": "radius", "update": "width / 2"}],
+  "data": [
+    {
+      "name": "table",
+      "url": "https://raw.githubusercontent.com/sste0032/Visualisation_2/main/Data/month_data.csv",
+      "format": {"type": "csv", "delimiter": ","}
+    },
+    {
+      "name": "keys",
+      "source": "table",
+      "transform": [{"type": "aggregate", "groupby": ["start_month"]}]
+    }
+  ],
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0.5,
+      "domain": {"data": "table", "field": "start_month"}
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": {"signal": "[0, radius]"},
+      "zero": true,
+      "nice": false,
+      "domain": {"data": "table", "field": "no_conflicts"},
+      "domainMin": 0
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "region"},
+      "range": {"scheme": "category10"}
+    }
+  ],
+  "encode": {"enter": {"x": {"signal": "radius"}, "y": {"signal": "radius"}}},
+  "marks": [
+    {
+      "type": "group",
+      "name": "categories",
+      "zindex": 1,
+      "from": {
+        "facet": {"data": "table", "name": "facet", "groupby": ["region"]}
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "category-line",
+          "from": {"data": "facet"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {
+                "signal": "scale('radial', datum.no_conflicts) * cos(scale('angular', datum.start_month))"
+              },
+              "y": {
+                "signal": "scale('radial', datum.no_conflicts) * sin(scale('angular', datum.start_month))"
+              },
+              "stroke": {"scale": "color", "field": "region"},
+              "strokeWidth": {"value": 1},
+              "fill": {"scale": "color", "field": "region"},
+              "fillOpacity": {"value": 0.1}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": {"data": "keys"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius * cos(scale('angular', datum.start_month))"},
+          "y2": {"signal": "radius * sin(scale('angular', datum.start_month))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "key-label",
+      "from": {"data": "keys"},
+      "zindex": 1,
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "(radius + 5) * cos(scale('angular', datum.start_month))"
+          },
+          "y": {
+            "signal": "(radius + 5) * sin(scale('angular', datum.start_month))"
+          },
+          "text": {"field": "start_month"},
+          "align": [
+            {
+              "test": "abs(scale('angular', datum.start_month)) > PI / 2",
+              "value": "right"
+            },
+            {"value": "left"}
+          ],
+          "baseline": [
+            {"test": "scale('angular', datum.start_month) > 0", "value": "top"},
+            {
+              "test": "scale('angular', datum.start_month) == 0",
+              "value": "middle"
+            },
+            {"value": "bottom"}
+          ],
+          "fill": {"value": "black"},
+          "fontWeight": {"value": "bold"}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    }
+  ],
+  "config": {}
+}
