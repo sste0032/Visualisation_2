@@ -1,0 +1,68 @@
+start_month,region,no_conflicts
+January,Africa,14
+January,Americas,2
+January,Asia,7
+January,Europe,1
+January,Middle East,3
+January,Multiple,1
+February,Africa,12
+February,Americas,4
+February,Asia,18
+February,Europe,2
+February,Middle East,6
+March,Africa,19
+March,Americas,4
+March,Asia,13
+March,Europe,4
+March,Middle East,8
+March,Multiple,2
+April,Africa,18
+April,Americas,8
+April,Asia,12
+April,Europe,4
+April,Middle East,10
+May,Africa,17
+May,Americas,2
+May,Asia,10
+May,Europe,2
+May,Middle East,5
+May,Multiple,2
+June,Africa,17
+June,Americas,3
+June,Asia,13
+June,Europe,7
+June,Middle East,6
+June,Multiple,1
+July,Africa,20
+July,Americas,6
+July,Asia,10
+July,Europe,3
+July,Middle East,13
+July,Multiple,1
+August,Africa,15
+August,Americas,5
+August,Asia,16
+August,Europe,9
+August,Middle East,9
+September,Africa,10
+September,Americas,4
+September,Asia,10
+September,Europe,3
+September,Middle East,7
+October,Africa,21
+October,Americas,6
+October,Asia,10
+October,Europe,5
+October,Middle East,4
+October,Multiple,3
+November,Africa,20
+November,Americas,1
+November,Asia,9
+November,Europe,2
+November,Middle East,4
+December,Africa,34
+December,Americas,4
+December,Asia,59
+December,Europe,9
+December,Middle East,12
+December,Multiple,1
