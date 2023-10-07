@@ -1,20 +1,249 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 300,
-  "height": 200,
+  "title": "Number of Conflicts Over Time (1946-2022)",
+  "width": 500,
+  "height": 300,
   "data": {
-    "url": "https://raw.githubusercontent.com/sste0032/Visualisation_2/main/Data/conflicts.csv"
+    "url": "https://raw.githubusercontent.com/sste0032/W10_Homework/main/data/year_data.csv"
   },
-  "mark": "area",
-  "encoding": {
-    "x": {"timeUnit": "year", "field": "year", "axis": {"format": "%Y"}},
-    "y": {
-      "aggregate": "distinct",
-      "field": "conflict_id",
-      "type": "quantitative",
-      "title": "Number of Conflicts"
+  "params": [
+    {
+      "name": "region_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Africa",
+          "Americas",
+          "Asia",
+          "Europe",
+          "Middle East"
+        ],
+        "labels": [
+          "Show All Regions",
+          "Africa",
+          "Americas",
+          "Asia",
+          "Europe",
+          "Middle East"
+        ],
+        "name": "Region Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "region_selection == null || datum.region == region_selection"}
+  ],
+  "layer": [{
+    "mark": "area",
+    "encoding": {
+      "x": {
+        "timeUnit": "year", 
+        "field": "year", 
+        "axis": {"format": "%Y"},
+        "title": "Year"},
+      "y": {
+        "field": "no_conflicts",
+        "type": "quantitative",
+        "title": "Number of Conflicts"},
+      "color": {
+        "field": "region",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            "Africa",
+            "Americas",
+            "Asia",
+            "Europe",
+            "Middle East",
+            "Multiple"
+          ],
+          "range": [
+            "#1f78b4",
+            "#33a02c",
+            "#66c2a5",
+            "#b2df8a",
+            "#1b9e77",
+            "#80b1d3"
+          ]
+        },
+        "legend": {"title": "Region"}
+     },
+      "tooltip": [
+        {"field": "year", "type": "temporal", 
+          "format": "%Y", "title": "Year"},
+        {"field": "region", "type": "nominal", 
+          "title": "Region"},
+        {"field": "no_conflicts", "type": "quantitative", "title": "Number of Conflicts"}
+      ]
+    }
+  },{
+    "transform": [
+      {
+        "joinaggregate": [
+          {
+            "op": "sum",
+            "field": "no_conflicts",
+            "as": "total_conflicts"
+          }
+        ],
+        "groupby": [
+          "year"
+        ]
+      },
+      {
+        "joinaggregate": [
+          {
+            "op": "max",
+            "field": "total_conflicts",
+            "as": "max_conflicts"
+          }
+        ]
+      }
+    ],
+    "mark": {
+      "type": "circle"
     },
-    "color": {"field": "region"}
-  },
-  "config": {}
+    "encoding": {
+      "y": {
+        "field": "max_conflicts", 
+        "type": "quantitative"
+      },
+      "x": {
+        "field": "year",
+        "type": "temporal",
+        "aggregate": {"argmax": "total_conflicts"}
+      },
+      "color": {
+        "value": "#B7410E"
+      },
+      "tooltip": [
+        {"field": "max_conflicts", "type": "quantitative", "title": "Maximum Total Conflicts"},
+        {"field": "year", 
+        "type": "temporal",
+        "format": "%Y", 
+        "title": "Year",
+        "aggregate": {"argmax": "total_conflicts"}}
+      ]
+    }   
+  },{
+    "transform": [
+      {
+        "joinaggregate": [
+          {
+            "op": "sum",
+            "field": "no_conflicts",
+            "as": "total_conflicts"
+          }
+        ],
+        "groupby": [
+          "year"
+        ]
+      },
+      {
+        "joinaggregate": [
+          {
+            "op": "max",
+            "field": "total_conflicts",
+            "as": "max_conflicts"
+          }
+        ]
+      }
+    ],
+    "mark": {
+      "type": "text",
+      "align": "right",
+      "baseline": "middle",
+      "dx": -5,
+      "dy": 2
+    },
+    "encoding": {
+      "y": {
+        "field": "max_conflicts", 
+        "type": "quantitative"
+      },
+      "x": {
+        "field": "year",
+        "type": "temporal",
+        "aggregate": {"argmax": "total_conflicts"}
+      },
+      "text": {
+        "value": "Max. Total Conflicts"
+      },
+      "color": {
+        "value": "#B7410E"
+      }
+    }
+  },{
+    "transform": [
+      {
+        "joinaggregate": [
+          {
+            "op": "sum",
+            "field": "no_conflicts",
+            "as": "total_conflicts"
+          }
+        ],
+        "groupby": [
+          "year"
+        ]
+      }
+    ],
+    "mark": {
+      "type": "rule",
+      "strokeDash": [4,4]
+    },
+    "encoding": {
+      "y": {
+        "aggregate": "mean",
+        "field": "total_conflicts"
+      },
+      "size": {"value": 2},
+      "color": {
+        "value": "darkgreen"
+      },
+      "tooltip": [
+        {"field": "total_conflicts", 
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Average Total Conflicts",
+        "aggregate": "mean"}
+      ]
+    }
+  },{
+    "transform": [
+      {
+        "joinaggregate": [
+          {
+            "op": "sum",
+            "field": "no_conflicts",
+            "as": "total_conflicts"
+          }
+        ],
+        "groupby": [
+          "year"
+        ]
+      }
+    ],
+    "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "dx": 253
+    },
+    "encoding": {
+      "y":{
+        "aggregate": "mean",
+        "field": "total_conflicts"
+      },
+      "text": {
+        "value": "Avg. Total Conflicts"
+      },
+      "color": {
+        "value": "darkgreen"
+      }
+    }
+  }],
+  "config": {
+  }
 }
