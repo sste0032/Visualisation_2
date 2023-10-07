@@ -1,68 +1,68 @@
 start_month,region,no_conflicts
-January,Africa,14
-January,Americas,2
-January,Asia,7
-January,Europe,1
-January,Middle East,3
-January,Multiple,1
-February,Africa,12
-February,Americas,4
-February,Asia,18
-February,Europe,2
-February,Middle East,6
-March,Africa,19
-March,Americas,4
-March,Asia,13
-March,Europe,4
-March,Middle East,8
-March,Multiple,2
-April,Africa,18
-April,Americas,8
-April,Asia,12
-April,Europe,4
-April,Middle East,10
+Jan,Africa,14
+Jan,Americas,2
+Jan,Asia,7
+Jan,Europe,1
+Jan,Middle East,3
+Jan,Multiple,1
+Feb,Africa,12
+Feb,Americas,4
+Feb,Asia,18
+Feb,Europe,2
+Feb,Middle East,6
+Mar,Africa,19
+Mar,Americas,4
+Mar,Asia,13
+Mar,Europe,4
+Mar,Middle East,8
+Mar,Multiple,2
+Apr,Africa,18
+Apr,Americas,8
+Apr,Asia,12
+Apr,Europe,4
+Apr,Middle East,10
 May,Africa,17
 May,Americas,2
 May,Asia,10
 May,Europe,2
 May,Middle East,5
 May,Multiple,2
-June,Africa,17
-June,Americas,3
-June,Asia,13
-June,Europe,7
-June,Middle East,6
-June,Multiple,1
-July,Africa,20
-July,Americas,6
-July,Asia,10
-July,Europe,3
-July,Middle East,13
-July,Multiple,1
-August,Africa,15
-August,Americas,5
-August,Asia,16
-August,Europe,9
-August,Middle East,9
-September,Africa,10
-September,Americas,4
-September,Asia,10
-September,Europe,3
-September,Middle East,7
-October,Africa,21
-October,Americas,6
-October,Asia,10
-October,Europe,5
-October,Middle East,4
-October,Multiple,3
-November,Africa,20
-November,Americas,1
-November,Asia,9
-November,Europe,2
-November,Middle East,4
-December,Africa,34
-December,Americas,4
-December,Asia,59
-December,Europe,9
-December,Middle East,12
-December,Multiple,1
+Jun,Africa,17
+Jun,Americas,3
+Jun,Asia,13
+Jun,Europe,7
+Jun,Middle East,6
+Jun,Multiple,1
+Jul,Africa,20
+Jul,Americas,6
+Jul,Asia,10
+Jul,Europe,3
+Jul,Middle East,13
+Jul,Multiple,1
+Aug,Africa,15
+Aug,Americas,5
+Aug,Asia,16
+Aug,Europe,9
+Aug,Middle East,9
+Sep,Africa,10
+Sep,Americas,4
+Sep,Asia,10
+Sep,Europe,3
+Sep,Middle East,7
+Oct,Africa,21
+Oct,Americas,6
+Oct,Asia,10
+Oct,Europe,5
+Oct,Middle East,4
+Oct,Multiple,3
+Nov,Africa,20
+Nov,Americas,1
+Nov,Asia,9
+Nov,Europe,2
+Nov,Middle East,4
+Dec,Africa,34
+Dec,Americas,4
+Dec,Asia,59
+Dec,Europe,9
+Dec,Middle East,12
+Dec,Multiple,1
