@@ -68,7 +68,10 @@
               "stroke": {"scale": "color", "field": "region"},
               "strokeWidth": {"value": 1},
               "fill": {"scale": "color", "field": "region"},
-              "fillOpacity": {"value": 0.1}
+              "fillOpacity": {"value": 0.1},
+              "tooltip": [
+                {"signal": "{'Region': datum.region, 'Month': datum.start_month, 'Number of Conflicts': datum.no_conflicts}"}
+              ]
             }
           }
         }
