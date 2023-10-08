@@ -1,5 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Number of Conflicts Acrosss Regions (1946-2022)",
+  "width": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/sste0032/Visualisation_2/main/Data/conflicts.csv"
   },
