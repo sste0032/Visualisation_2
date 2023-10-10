@@ -1,40 +1,37 @@
-region,intensity_level,type_of_conflict,no_conflicts
-Africa,1,1,50
-Africa,1,2,10
-Africa,1,3,413
-Africa,1,4,150
-Africa,2,1,16
-Africa,2,2,6
-Africa,2,3,123
-Africa,2,4,83
-Americas,1,1,1
-Americas,1,2,4
-Americas,1,3,133
-Americas,1,4,18
-Americas,2,2,1
-Americas,2,3,40
-Americas,2,4,1
-Asia,1,1,27
-Asia,1,2,53
-Asia,1,3,679
-Asia,1,4,28
-Asia,2,1,13
-Asia,2,2,24
-Asia,2,3,158
-Asia,2,4,59
-Europe,1,1,5
-Europe,1,2,1
-Europe,1,3,83
-Europe,1,4,21
-Europe,2,2,2
-Europe,2,3,25
-Europe,2,4,12
-Middle East,1,1,5
-Middle East,1,2,11
-Middle East,1,3,231
-Middle East,1,4,32
-Middle East,2,2,17
-Middle East,2,3,40
-Middle East,2,4,39
-Multiple,1,2,7
-Multiple,2,2,5
+region,incompatibility,intensity_level,type_of_conflict,no_conflicts
+Africa,Government,Minor,Territory,317
+Africa,Government,War,Territory,157
+Africa,Territory,Minor,Extrasystemic,50
+Africa,Territory,Minor,Territory,256
+Africa,Territory,War,Extrasystemic,16
+Africa,Territory,War,Territory,55
+Americas,Government,Minor,Territory,153
+Americas,Government,War,Territory,41
+Americas,Territory,Minor,Extrasystemic,1
+Americas,Territory,Minor,Territory,2
+Americas,Territory,War,Territory,1
+Asia,Government,Minor,Territory,189
+Asia,Government,War,Territory,133
+Asia,Territory,Minor,Extrasystemic,27
+Asia,Territory,Minor,Territory,570
+Asia,Territory,War,Extrasystemic,13
+Asia,Territory,War,Territory,105
+Asia,Territory and Gov,Minor,Territory,1
+Asia,Territory and Gov,War,Territory,3
+Europe,Government,Minor,Territory,9
+Europe,Government,War,Territory,7
+Europe,Territory,Minor,Extrasystemic,5
+Europe,Territory,Minor,Territory,96
+Europe,Territory,War,Territory,31
+Europe,Territory and Gov,War,Territory,1
+Middle East,Government,Minor,Territory,95
+Middle East,Government,War,Territory,46
+Middle East,Territory,Minor,Extrasystemic,5
+Middle East,Territory,Minor,Territory,174
+Middle East,Territory,War,Territory,41
+Middle East,Territory and Gov,Minor,Territory,5
+Middle East,Territory and Gov,War,Territory,9
+Multiple,Government,Minor,Territory,1
+Multiple,Government,War,Territory,2
+Multiple,Territory,Minor,Territory,6
+Multiple,Territory,War,Territory,3
