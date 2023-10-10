@@ -1,37 +1,64 @@
 region,incompatibility,intensity_level,type_of_conflict,no_conflicts
-Africa,Government,Minor,Territory,317
-Africa,Government,War,Territory,157
+Africa,Government,Minor,Internationalised Intrastate,97
+Africa,Government,Minor,Intrastate,220
+Africa,Government,War,Internationalised Intrastate,72
+Africa,Government,War,Intrastate,85
 Africa,Territory,Minor,Extrasystemic,50
-Africa,Territory,Minor,Territory,256
+Africa,Territory,Minor,Internationalised Intrastate,53
+Africa,Territory,Minor,Interstate,10
+Africa,Territory,Minor,Intrastate,193
 Africa,Territory,War,Extrasystemic,16
-Africa,Territory,War,Territory,55
-Americas,Government,Minor,Territory,153
-Americas,Government,War,Territory,41
+Africa,Territory,War,Internationalised Intrastate,11
+Africa,Territory,War,Interstate,6
+Africa,Territory,War,Intrastate,38
+Americas,Government,Minor,Internationalised Intrastate,18
+Americas,Government,Minor,Interstate,2
+Americas,Government,Minor,Intrastate,133
+Americas,Government,War,Internationalised Intrastate,1
+Americas,Government,War,Intrastate,40
 Americas,Territory,Minor,Extrasystemic,1
-Americas,Territory,Minor,Territory,2
-Americas,Territory,War,Territory,1
-Asia,Government,Minor,Territory,189
-Asia,Government,War,Territory,133
+Americas,Territory,Minor,Interstate,2
+Americas,Territory,War,Interstate,1
+Asia,Government,Minor,Internationalised Intrastate,22
+Asia,Government,Minor,Intrastate,167
+Asia,Government,War,Internationalised Intrastate,52
+Asia,Government,War,Intrastate,81
 Asia,Territory,Minor,Extrasystemic,27
-Asia,Territory,Minor,Territory,570
+Asia,Territory,Minor,Internationalised Intrastate,6
+Asia,Territory,Minor,Interstate,52
+Asia,Territory,Minor,Intrastate,512
 Asia,Territory,War,Extrasystemic,13
-Asia,Territory,War,Territory,105
-Asia,Territory and Gov,Minor,Territory,1
-Asia,Territory and Gov,War,Territory,3
-Europe,Government,Minor,Territory,9
-Europe,Government,War,Territory,7
+Asia,Territory,War,Internationalised Intrastate,7
+Asia,Territory,War,Interstate,21
+Asia,Territory,War,Intrastate,77
+Asia,Territory and Gov,Minor,Interstate,1
+Asia,Territory and Gov,War,Interstate,3
+Europe,Government,Minor,Intrastate,9
+Europe,Government,War,Interstate,1
+Europe,Government,War,Intrastate,6
 Europe,Territory,Minor,Extrasystemic,5
-Europe,Territory,Minor,Territory,96
-Europe,Territory,War,Territory,31
-Europe,Territory and Gov,War,Territory,1
-Middle East,Government,Minor,Territory,95
-Middle East,Government,War,Territory,46
+Europe,Territory,Minor,Internationalised Intrastate,21
+Europe,Territory,Minor,Interstate,1
+Europe,Territory,Minor,Intrastate,74
+Europe,Territory,War,Internationalised Intrastate,12
+Europe,Territory,War,Intrastate,19
+Europe,Territory and Gov,War,Interstate,1
+Middle East,Government,Minor,Internationalised Intrastate,26
+Middle East,Government,Minor,Interstate,5
+Middle East,Government,Minor,Intrastate,64
+Middle East,Government,War,Internationalised Intrastate,33
+Middle East,Government,War,Intrastate,13
 Middle East,Territory,Minor,Extrasystemic,5
-Middle East,Territory,Minor,Territory,174
-Middle East,Territory,War,Territory,41
-Middle East,Territory and Gov,Minor,Territory,5
-Middle East,Territory and Gov,War,Territory,9
-Multiple,Government,Minor,Territory,1
-Multiple,Government,War,Territory,2
-Multiple,Territory,Minor,Territory,6
-Multiple,Territory,War,Territory,3
+Middle East,Territory,Minor,Internationalised Intrastate,6
+Middle East,Territory,Minor,Interstate,3
+Middle East,Territory,Minor,Intrastate,165
+Middle East,Territory,War,Internationalised Intrastate,6
+Middle East,Territory,War,Interstate,8
+Middle East,Territory,War,Intrastate,27
+Middle East,Territory and Gov,Minor,Interstate,3
+Middle East,Territory and Gov,Minor,Intrastate,2
+Middle East,Territory and Gov,War,Interstate,9
+Multiple,Government,Minor,Interstate,1
+Multiple,Government,War,Interstate,2
+Multiple,Territory,Minor,Interstate,6
+Multiple,Territory,War,Interstate,3
