@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Number of Conflicts Across Regions (1946-2022)",
+  "width": 500,
+  "data": {
+    "url": "https://raw.githubusercontent.com/sste0032/Visualisation_2/main/Data/region_data.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "region", "type": "nominal", "title": "Region"},
+    "y": {
+      "aggregate": "sum",
+      "field": "no_conflicts",
+      "type": "quantitative",
+      "title": "Number of Conflicts"
+    },
+    "color": {
+      "field": "type_of_conflict", 
+      "type": "nominal",
+      "legend": {"title": "Type of Conflict"}
+    },
+    "tooltip": [
+      {"field": "region", "type": "nominal","title": "Region"},
+      {"field": "type_of_conflict", "type": "nominal", "title": "Type of Conflict"},
+      {"aggregate": "sum",
+      "field": "no_conflicts",
+      "type": "quantitative",
+      "title": "Number of Conflicts"}
+    ]
+  },
+  "config": {
+
+  }
+}
