@@ -5,6 +5,28 @@
   "data": {
     "url": "https://raw.githubusercontent.com/sste0032/Visualisation_2/main/Data/region_data.csv"
   },
+  "params": [
+    {
+      "name": "intensity_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Minor",
+          "War"
+        ],
+        "labels": [
+          "Show All Intensities",
+          "Minor",
+          "War"
+        ],
+        "name": "Intensity Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "intensity_selection == null || datum.intensity_level == intensity_selection"}
+  ],
   "mark": "bar",
   "encoding": {
     "x": {"field": "region", "type": "nominal", "title": "Region"},
@@ -17,6 +39,16 @@
     "color": {
       "field": "intensity_level", 
       "type": "nominal",
+      "scale": {
+        "domain": [
+          "Minor",
+          "War"
+        ],
+        "range": [
+          "grey",
+          "darkorange"
+        ]
+      },
       "legend": {"title": "Intensity Level"}
     },
     "tooltip": [
