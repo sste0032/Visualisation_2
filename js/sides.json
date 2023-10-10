@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "title": "Frequency of Conflicts between Sides (1946-2022)",
   "width": 500,
-  "padding": 5,
   "data": [
     {
       "name": "edges",
@@ -86,7 +85,10 @@
         "update": {
           "stroke": {"value": "#000"},
           "strokeOpacity": {"value": 0.2},
-          "strokeWidth": {"field": "value"}
+          "strokeWidth": {"field": "value"},
+          "tooltip": [
+            {"signal": "{'Number of Conflicts': datum.value}"}
+          ]
         }
       },
       "transform": [
@@ -130,7 +132,10 @@
           "align": {"value": "right"},
           "baseline": {"value": "middle"},
           "angle": {"value": -90},
-          "text": {"field": "name"}
+          "text": {"field": "name"},
+          "tooltip": [
+            {"signal": "{'Country/Organisation': datum.name, 'Region': datum.group}"}
+          ]
         }
       }
     }
