@@ -63,6 +63,12 @@
       "domain": {"data": "nodes", "field": "group"}
     }
   ],
+  "legends": [
+    {
+      "fill": "color",
+      "title": "Region"
+    }
+  ],
   "marks": [
     {
       "type": "symbol",
