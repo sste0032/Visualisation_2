@@ -35,7 +35,7 @@
               "url": "https://raw.githubusercontent.com/sste0032/Visualisation_2/main/Data/map_data.csv"
             },
             "key": "location",
-            "fields": ["no_conflicts", "avg_intensity", "avg_duration"]
+            "fields": ["no_conflicts", "avg_duration"]
           }
         }
       ],
@@ -64,11 +64,6 @@
             "field": "no_conflicts",
             "type": "ordinal",
             "title": "Number of Conflicts"
-          },
-          {
-            "field": "avg_intensity",
-            "type": "quantitative",
-            "title": "Average Intensity"
           },
           {
             "field": "avg_duration",
