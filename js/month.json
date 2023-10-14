@@ -2,9 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "title": {
     "text": "Number of Conflicts Starting in Each Month (1946-2022)",
-    "dx": -35},
+    "dx": -10},
   "width": 250,
-  "padding": {"top": 104},
+  "padding": {"top": 104, "right": 40},
   "signals": [{"name": "radius", "update": "width / 2"}],
   "data": [
     {
@@ -41,6 +41,11 @@
       "domain": {"data": "table", "field": "region"},
       "range": {"scheme": "category10"}
     }
+  ],
+  "legends": [
+    {"fill": "color",
+    "title": "Region",
+    "orient": "bottom-right"}
   ],
   "encode": {"enter": {
     "x": {"signal": "radius-100"}, 
