@@ -5,7 +5,43 @@
     "dx": -10},
   "width": 250,
   "padding": {"top": 104, "right": 40},
-  "signals": [{"name": "radius", "update": "width / 2"}],
+
+  "signals": [
+    {
+      "name": "radius", "update": "width / 2"
+    },
+    {
+      "name": "clear", "value": true,
+      "on": [
+        {
+          "events": "mouseup[!event.item]",
+          "update": "true",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "shift", "value": false,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "event.shiftKey",
+          "force":  true
+        }
+      ]
+    },
+    {
+      "name": "clicked", "value": null,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "{value: datum.value}",
+          "force":  true
+        }
+      ]
+    }
+  ],
+
   "data": [
     {
       "name": "table",
@@ -16,6 +52,15 @@
       "name": "keys",
       "source": "table",
       "transform": [{"type": "aggregate", "groupby": ["start_month"]}]
+    },
+    {
+      "name": "selected",
+      "on": [
+        {"trigger": "clear", "remove": true},
+        {"trigger": "!shift", "remove": true},
+        {"trigger": "!shift && clicked", "insert": "clicked"},
+        {"trigger": "shift && clicked", "toggle": "clicked"}
+      ]
     }
   ],
   "scales": [
@@ -45,7 +90,30 @@
   "legends": [
     {"fill": "color",
     "title": "Region",
-    "orient": "bottom-right"}
+    "orient": "bottom-right",
+    "encode": {
+        "symbols": {
+          "name": "legendSymbol",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {"test": "!length(data('selected')) || indata('selected', 'value', datum.value)", "value": 0.7},
+              {"value": 0.15}
+            ]
+          }
+        },
+        "labels": {
+          "name": "legendLabel",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {"test": "!length(data('selected')) || indata('selected', 'value', datum.value)", "value": 1},
+              {"value": 0.25}
+            ]
+          }
+        }
+      }
+    }
   ],
   "encode": {"enter": {
     "x": {"signal": "radius-100"}, 
@@ -78,9 +146,15 @@
               "stroke": {"scale": "color", "field": "region"},
               "strokeWidth": {"value": 1},
               "fill": {"scale": "color", "field": "region"},
-              "fillOpacity": {"value": 0.1},
+              "fillOpacity": {"value": 0.5},
               "tooltip": [
                 {"signal": "{'Region': datum.region, 'Month': datum.start_month, 'Number of Conflicts': datum.no_conflicts}"}
+              ]
+            },
+            "update": {
+              "opacity": [
+                {"test": "(!length(data('selected')) || indata('selected', 'value', datum.region))", "value": 0.7 },
+                {"value": 0.15}
               ]
             }
           }
