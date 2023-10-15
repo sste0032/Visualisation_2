@@ -3,7 +3,7 @@
   "title": {
     "text": "Number of Conflicts Starting in Each Month (1946-2022)",
     "dx": -10},
-  "width": 250,
+  "width": 400,
   "padding": {"top": 104, "right": 40},
 
   "signals": [
