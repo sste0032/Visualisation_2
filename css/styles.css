@@ -14,6 +14,10 @@ body {
     background-color: white;
 }
 
+strong {
+    font-weight: bold;
+}
+
 .page {
     width: 1700px;
     background-color: lightblue;
