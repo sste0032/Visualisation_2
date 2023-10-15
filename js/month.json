@@ -84,7 +84,14 @@
       "name": "color",
       "type": "ordinal",
       "domain": {"data": "table", "field": "region"},
-      "range": {"scheme": "category10"}
+      "range": [
+          "#66c2a5",
+          "#33a02c",
+          "#b2df8a",
+          "#1f78b4",
+          "#1b9e77",
+          "#80b1d3"
+        ]
     }
   ],
   "legends": [
@@ -144,17 +151,17 @@
                 "signal": "scale('radial', datum.no_conflicts) * sin(scale('angular', datum.start_month))"
               },
               "stroke": {"scale": "color", "field": "region"},
-              "strokeWidth": {"value": 1},
+              "strokeWidth": {"value": 2},
               "fill": {"scale": "color", "field": "region"},
-              "fillOpacity": {"value": 0.5},
+              "fillOpacity": {"value": 0.8},
               "tooltip": [
                 {"signal": "{'Region': datum.region, 'Month': datum.start_month, 'Number of Conflicts': datum.no_conflicts}"}
               ]
             },
             "update": {
               "opacity": [
-                {"test": "(!length(data('selected')) || indata('selected', 'value', datum.region))", "value": 0.7 },
-                {"value": 0.15}
+                {"test": "(!length(data('selected')) || indata('selected', 'value', datum.region))", "value": 1 },
+                {"value": 0.1}
               ]
             }
           }
