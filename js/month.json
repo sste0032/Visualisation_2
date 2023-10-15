@@ -5,7 +5,7 @@
     "dx": -10},
   "width": 200,
   "height": 100,
-  "padding": {"top": 115, "right": 10},
+  "padding": {"top": 115, "right": 10, "bottom": -100},
 
   "signals": [
     {
