@@ -19,6 +19,7 @@ body {
     background-color: lightblue;
     margin: auto;
     padding: 50px;
+    left-padding: 25px;
 }
 
 .vis-container {
