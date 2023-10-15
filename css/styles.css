@@ -2,7 +2,6 @@ body *{
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     font-size: 14px;
-    padding-left: 5px;
 }
 
 h1 {
@@ -19,7 +18,7 @@ body {
     width: 1700px;
     background-color: lightblue;
     margin: auto;
-    padding: 25px;
+    padding: 50px;
 }
 
 .vis-container {
@@ -33,7 +32,7 @@ h1 {
 }
 
 .description-right {
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 .description-left {
