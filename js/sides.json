@@ -3,6 +3,41 @@
   "title": "Frequency of Conflicts between Sides (1946-2022)",
   "width": 500,
   "height": 300,
+
+  "signals": [
+    {
+      "name": "clear", "value": true,
+      "on": [
+        {
+          "events": "mouseup[!event.item]",
+          "update": "true",
+          "force": true
+        }
+      ]
+    },
+    {
+      "name": "shift", "value": false,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "event.shiftKey",
+          "force":  true
+        }
+      ]
+    },
+    {
+      "name": "clicked", "value": null,
+      "on": [
+        {
+          "events": "@legendSymbol:click, @legendLabel:click",
+          "update": "{value: datum.value}",
+          "force":  true
+        }
+      ]
+    }
+  ],
+
+
   "data": [
     {
       "name": "edges",
@@ -47,8 +82,19 @@
           "expr": "datum.sourceDegree.count + datum.targetDegree.count"
         }
       ]
+    },
+    {
+      "name": "selected",
+      "on": [
+        {"trigger": "clear", "remove": true},
+        {"trigger": "!shift", "remove": true},
+        {"trigger": "!shift && clicked", "insert": "clicked"},
+        {"trigger": "shift && clicked", "toggle": "clicked"}
+      ]
     }
   ],
+
+
   "scales": [
     {
       "name": "position",
@@ -59,16 +105,49 @@
     {
       "name": "color",
       "type": "ordinal",
-      "range": "category",
+      "range": [
+        "#66c2a5",
+        "#33a02c",
+        "#b2df8a",
+        "#1f78b4",
+        "#1b9e77",
+        "#80b1d3"
+      ],
       "domain": {"data": "nodes", "field": "group"}
     }
   ],
+
+
   "legends": [
-    {
-      "fill": "color",
-      "title": "Region"
+    {"fill": "color",
+    "title": "Region",
+    "orient": "bottom-right",
+    "encode": {
+        "symbols": {
+          "name": "legendSymbol",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {"test": "!length(data('selected')) || indata('selected', 'value', datum.value)", "value": 0.7},
+              {"value": 0.15}
+            ]
+          }
+        },
+        "labels": {
+          "name": "legendLabel",
+          "interactive": true,
+          "update": {
+            "opacity": [
+              {"test": "!length(data('selected')) || indata('selected', 'value', datum.value)", "value": 1},
+              {"value": 0.25}
+            ]
+          }
+        }
+      }
     }
   ],
+
+
   "marks": [
     {
       "type": "symbol",
