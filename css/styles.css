@@ -41,6 +41,7 @@ h1 {
 }
 
 .pure-g {
+    padding-top: 10px;
     justify-content: space-evenly;
     background-color: white;
 }
