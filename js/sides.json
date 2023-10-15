@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "title": "Frequency of Conflicts between Sides (1946-2022)",
   "width": 500,
-  "height": 300,
+  "height": 200,
 
   "signals": [
     {
@@ -121,7 +121,7 @@
   "legends": [
     {"fill": "color",
     "title": "Region",
-    "orient": "bottom-right",
+    "orient": "right",
     "encode": {
         "symbols": {
           "name": "legendSymbol",
@@ -226,5 +226,7 @@
       }
     }
   ],
-  "config": {}
+  "config": {
+
+  }
 }
