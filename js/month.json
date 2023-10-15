@@ -3,8 +3,8 @@
   "title": {
     "text": "Number of Conflicts Starting in Each Month (1946-2022)",
     "dx": -10},
-  "width": 300,
-  "padding": {"top": 65, "right": 35},
+  "width": 200,
+  "padding": {"top": 115, "right": 10},
 
   "signals": [
     {
@@ -97,7 +97,9 @@
   "legends": [
     {"fill": "color",
     "title": "Region",
-    "orient": "bottom-right",
+    "orient": "none",
+    "legendX": 135,
+    "legendY": -100,
     "encode": {
         "symbols": {
           "name": "legendSymbol",
