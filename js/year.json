@@ -139,54 +139,6 @@
         "groupby": [
           "year"
         ]
-      },
-      {
-        "joinaggregate": [
-          {
-            "op": "max",
-            "field": "total_conflicts",
-            "as": "max_conflicts"
-          }
-        ]
-      }
-    ],
-    "mark": {
-      "type": "text",
-      "align": "right",
-      "baseline": "middle",
-      "dx": -5,
-      "dy": 2
-    },
-    "encoding": {
-      "y": {
-        "field": "max_conflicts", 
-        "type": "quantitative"
-      },
-      "x": {
-        "field": "year",
-        "type": "temporal",
-        "aggregate": {"argmax": "total_conflicts"}
-      },
-      "text": {
-        "value": "Max. Total Conflicts"
-      },
-      "color": {
-        "value": "#B7410E"
-      }
-    }
-  },{
-    "transform": [
-      {
-        "joinaggregate": [
-          {
-            "op": "sum",
-            "field": "no_conflicts",
-            "as": "total_conflicts"
-          }
-        ],
-        "groupby": [
-          "year"
-        ]
       }
     ],
     "mark": {
@@ -209,39 +161,6 @@
         "title": "Average Total Conflicts",
         "aggregate": "mean"}
       ]
-    }
-  },{
-    "transform": [
-      {
-        "joinaggregate": [
-          {
-            "op": "sum",
-            "field": "no_conflicts",
-            "as": "total_conflicts"
-          }
-        ],
-        "groupby": [
-          "year"
-        ]
-      }
-    ],
-    "mark": {
-      "type": "text",
-      "align": "left",
-      "baseline": "middle",
-      "dx": 253
-    },
-    "encoding": {
-      "y":{
-        "aggregate": "mean",
-        "field": "total_conflicts"
-      },
-      "text": {
-        "value": "Avg. Total Conflicts"
-      },
-      "color": {
-        "value": "darkgreen"
-      }
     }
   }],
   "config": {
