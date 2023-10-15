@@ -4,40 +4,6 @@
   "width": 300,
   "height": 200,
 
-  "signals": [
-    {
-      "name": "clear", "value": true,
-      "on": [
-        {
-          "events": "mouseup[!event.item]",
-          "update": "true",
-          "force": true
-        }
-      ]
-    },
-    {
-      "name": "shift", "value": false,
-      "on": [
-        {
-          "events": "@legendSymbol:click, @legendLabel:click",
-          "update": "event.shiftKey",
-          "force":  true
-        }
-      ]
-    },
-    {
-      "name": "clicked", "value": null,
-      "on": [
-        {
-          "events": "@legendSymbol:click, @legendLabel:click",
-          "update": "{value: datum.value}",
-          "force":  true
-        }
-      ]
-    }
-  ],
-
-
   "data": [
     {
       "name": "edges",
@@ -82,15 +48,6 @@
           "expr": "datum.sourceDegree.count + datum.targetDegree.count"
         }
       ]
-    },
-    {
-      "name": "selected",
-      "on": [
-        {"trigger": "clear", "remove": true},
-        {"trigger": "!shift", "remove": true},
-        {"trigger": "!shift && clicked", "insert": "clicked"},
-        {"trigger": "shift && clicked", "toggle": "clicked"}
-      ]
     }
   ],
 
@@ -121,29 +78,7 @@
   "legends": [
     {"fill": "color",
     "title": "Region",
-    "orient": "right",
-    "encode": {
-        "symbols": {
-          "name": "legendSymbol",
-          "interactive": true,
-          "update": {
-            "opacity": [
-              {"test": "!length(data('selected')) || indata('selected', 'value', datum.value)", "value": 0.7},
-              {"value": 0.15}
-            ]
-          }
-        },
-        "labels": {
-          "name": "legendLabel",
-          "interactive": true,
-          "update": {
-            "opacity": [
-              {"test": "!length(data('selected')) || indata('selected', 'value', datum.value)", "value": 1},
-              {"value": 0.25}
-            ]
-          }
-        }
-      }
+    "orient": "right"
     }
   ],
 
