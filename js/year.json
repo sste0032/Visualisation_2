@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Number of Conflicts Over Time (1946-2022)",
   "width": 400,
-  "height": 200,
+  "height": 170,
   "data": {
     "url": "https://raw.githubusercontent.com/sste0032/Visualisation_2/main/Data/year_data.csv"
   },
